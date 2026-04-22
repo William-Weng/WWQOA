@@ -32,8 +32,8 @@ private extension ViewController {
         let qoaUrl = FileManager.default.temporaryDirectory.appendingPathComponent("do-re-mi-re-do.qoa")
         let result = try WWQOA.shared.encodeFile(pcmInput, to: qoaUrl)
         
-        print("PCM Size: \(pcmInput.interleavedSamples.count)")
         print("QOA File:", qoaUrl.path)
+        print("PCM Size: \(pcmInput.interleavedSamples.count)")
         print("QOA Size:", result.count)
         print("Result:", result)
         

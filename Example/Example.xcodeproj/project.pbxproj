@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81021B6D2F98C59F00EE1C52 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81021B6C2F98C59F00EE1C52 /* WWQOA */; };
+		81021B702F98C64E00EE1C52 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81021B6F2F98C64E00EE1C52 /* WWQOA */; };
 		811B2C5C2F9610AB0056D3E1 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 811B2C5B2F9610AB0056D3E1 /* WWQOA */; };
-		81C9008F2F98BED5002FF5C2 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81C9008E2F98BED5002FF5C2 /* WWQOA */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81C9008F2F98BED5002FF5C2 /* WWQOA in Frameworks */,
+				81021B702F98C64E00EE1C52 /* WWQOA in Frameworks */,
+				81021B6D2F98C59F00EE1C52 /* WWQOA in Frameworks */,
 				811B2C5C2F9610AB0056D3E1 /* WWQOA in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +88,8 @@
 			name = Example;
 			packageProductDependencies = (
 				811B2C5B2F9610AB0056D3E1 /* WWQOA */,
-				81C9008E2F98BED5002FF5C2 /* WWQOA */,
+				81021B6C2F98C59F00EE1C52 /* WWQOA */,
+				81021B6F2F98C64E00EE1C52 /* WWQOA */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -117,7 +120,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				81C9008D2F98BED5002FF5C2 /* XCRemoteSwiftPackageReference "WWQOA" */,
+				81021B6E2F98C64E00EE1C52 /* XCRemoteSwiftPackageReference "WWQOA" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -361,7 +364,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81C9008D2F98BED5002FF5C2 /* XCRemoteSwiftPackageReference "WWQOA" */ = {
+		81021B6E2F98C64E00EE1C52 /* XCRemoteSwiftPackageReference "WWQOA" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWQOA";
 			requirement = {
@@ -372,13 +375,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		811B2C5B2F9610AB0056D3E1 /* WWQOA */ = {
+		81021B6C2F98C59F00EE1C52 /* WWQOA */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = WWQOA;
 		};
-		81C9008E2F98BED5002FF5C2 /* WWQOA */ = {
+		81021B6F2F98C64E00EE1C52 /* WWQOA */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81C9008D2F98BED5002FF5C2 /* XCRemoteSwiftPackageReference "WWQOA" */;
+			package = 81021B6E2F98C64E00EE1C52 /* XCRemoteSwiftPackageReference "WWQOA" */;
+			productName = WWQOA;
+		};
+		811B2C5B2F9610AB0056D3E1 /* WWQOA */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = WWQOA;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -26,16 +26,6 @@ extension WWQOA.FileDecoder {
         var allPlanarSamples: [[Int16]] = []
         var staticChannels: Int?
         var staticSampleRate: Int?
-
-        func checkChannels(with frame: WWQOA.FrameDecodeResult) throws {
-            staticChannels = staticChannels ?? frame.header.channels
-            if (!isStreaming && staticChannels != frame.header.channels) { throw WWQOA.FileDecodeError.inconsistentStaticFileChannels }
-        }
-        
-        func checkSampleRate(with frame: WWQOA.FrameDecodeResult) throws {
-            staticSampleRate = staticSampleRate ?? frame.header.sampleRate
-            if (!isStreaming && staticSampleRate != frame.header.sampleRate) { throw WWQOA.FileDecodeError.inconsistentStaticFileSampleRate }
-        }
         
         while (reader.offset < data.count) {
             
