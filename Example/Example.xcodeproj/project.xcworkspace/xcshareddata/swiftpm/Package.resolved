@@ -1,0 +1,15 @@
+{
+  "originHash" : "f7161b68f0d1c15d09f7134c20529ba1a45c16aef41e28e66f9c4b35f929d3a5",
+  "pins" : [
+    {
+      "identity" : "wwqoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWQOA",
+      "state" : {
+        "revision" : "57de9beeb533a785f2280d1ddb28241bff1ca18e",
+        "version" : "1.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

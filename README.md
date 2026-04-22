@@ -7,6 +7,8 @@
 
 ## 📷 [效果預覽](https://peterpanswift.github.io/iphone-bezels/)
 
+![](https://github.com/user-attachments/assets/f311c5ae-6cf0-4695-93a7-a4c1ec873452)
+
 <div align="center">
 
 **⭐ 覺得好用就給個 Star 吧！**
