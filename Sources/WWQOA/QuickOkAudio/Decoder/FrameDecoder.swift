@@ -1,4 +1,5 @@
 import Foundation
+import WWByteReader
 
 // MARK: - 公開函式
 extension WWQOA.FrameDecoder {
@@ -8,7 +9,7 @@ extension WWQOA.FrameDecoder {
     /// - Returns: 解碼後的 frame 資訊與 PCM
     func decodeFrame(_ data: Data) throws -> WWQOA.FrameDecodeResult {
         
-        var reader = WWQOA.ByteReader(data: data)
+        var reader = WWByteReader(data: data)
         
         let header = try readFrameHeader(from: &reader)
         let expectedFrameSize = calculateExpectedFrameSize(with: header)
@@ -52,7 +53,7 @@ private extension WWQOA.FrameDecoder {
     /// - Returns: 依聲道順序排列的 LMS states
     /// - Throws: 當資料不足、聲道數無效，或任一 LMS state 讀取失敗時拋出錯誤
     /// - Reference: QOA frame format 中，每個 channel 都包含一份 16-byte LMS state。[web:97]
-    func readLMSStates(from reader: inout WWQOA.ByteReader, channels: Int) throws -> [WWQOA.LMSState] {
+    func readLMSStates(from reader: inout WWByteReader, channels: Int) throws -> [WWQOA.LMSState] {
         
         var states: [WWQOA.LMSState] = []
         states.reserveCapacity(channels)
@@ -103,7 +104,7 @@ private extension WWQOA.FrameDecoder {
     /// - Returns: 解碼後的 `WWQOA.FrameHeader`
     /// - Throws: 當剩餘資料不足 8 bytes 或欄位讀取失敗時拋出錯誤
     /// - Reference: QOA 規格中 `frame header` 定義，`frameSize` 包含 header 本身。[web:97]
-    func readFrameHeader(from reader: inout WWQOA.ByteReader) throws -> WWQOA.FrameHeader {
+    func readFrameHeader(from reader: inout WWByteReader) throws -> WWQOA.FrameHeader {
         
         let channels = Int(try reader.readUIntValue() as UInt8)
         let sampleRate = Int(try reader.readUInt24Value())
@@ -151,12 +152,11 @@ private extension WWQOA.FrameDecoder {
     ///
     /// 所有欄位皆以 Big Endian 讀取，並轉成 `Int32` 儲存在 `WWQOA.LMSState` 中，
     /// 以便後續做預測計算時避免中間乘加溢位。
-    ///
     /// - Parameter reader: 指向 LMS state 起始位置的 `ByteReader`，讀取後 offset 會前進 16 bytes
     /// - Returns: 解碼後的 `WWQOA.LMSState`
     /// - Throws: 當剩餘資料不足 16 bytes 或讀取失敗時拋出錯誤
     /// - Reference: QOA frame format 中每個 channel 包含 16-byte LMS state。[web:97]
-    func readLMSState(from reader: inout WWQOA.ByteReader) throws -> WWQOA.LMSState {
+    func readLMSState(from reader: inout WWByteReader) throws -> WWQOA.LMSState {
         
         let capacitySize = WWQOA.LMS.deltaShift
         

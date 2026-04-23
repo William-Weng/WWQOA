@@ -11,8 +11,15 @@ let package = Package(
     products: [
         .library(name: "WWQOA", targets: ["WWQOA"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/William-Weng/WWByteReader", .upToNextMinor(from: "1.0.1")),
+    ],
     targets: [
-        .target(name: "WWQOA"),
+        .target(
+            name: "WWQOA",
+            dependencies: [.product(name: "WWByteReader", package: "WWByteReader")],
+            resources: [.copy("Privacy")
+        ]),
     ],
     swiftLanguageVersions: [
         .v5

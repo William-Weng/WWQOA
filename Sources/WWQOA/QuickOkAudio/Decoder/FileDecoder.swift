@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import WWByteReader
 
 // MARK: - 公開函式
 extension WWQOA.FileDecoder {
@@ -13,7 +14,7 @@ extension WWQOA.FileDecoder {
     /// 解碼完整 QOA 檔案
     func decodeFile(_ data: Data) throws -> WWQOA.FileDecodeResult {
         
-        var reader = WWQOA.ByteReader(data: data)
+        var reader = WWByteReader(data: data)
 
         let magic = try readMagic(from: &reader)
         
@@ -68,7 +69,7 @@ private extension WWQOA.FileDecoder {
     /// 讀取檔頭 => magic number: "qoaf"
     /// - Parameter reader: WWQOA.ByteReader
     /// - Returns: [UInt8]
-    func readMagic(from reader: inout WWQOA.ByteReader) throws -> [UInt8] {
+    func readMagic(from reader: inout WWByteReader) throws -> [UInt8] {
         
         let count = WWQOA.Constant.magic.count
         
