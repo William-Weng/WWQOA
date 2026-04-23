@@ -9,9 +9,7 @@ import Foundation
 
 // MARK: - 一般模型
 extension WWQOA {
-    
-    struct WavEncoder {}
-    
+        
     /// QOA 檔案編碼器
     struct FileEncoder {
         let frameEncoder = FrameEncoder()   // Frame編碼器

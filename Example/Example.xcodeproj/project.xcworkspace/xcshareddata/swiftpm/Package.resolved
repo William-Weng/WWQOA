@@ -9,6 +9,15 @@
         "revision" : "649c61f39782e3e7e4fe962d2f6354dcb60c1992",
         "version" : "1.0.1"
       }
+    },
+    {
+      "identity" : "wwwavwriter",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWWavWriter",
+      "state" : {
+        "revision" : "503304723a6d97698294d634b1785fdc4cd7bc85",
+        "version" : "1.1.0"
+      }
     }
   ],
   "version" : 3

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import WWWavWriter
 
 // MARK: - [Quite Ok Audio](https://qoaformat.org/)
 public struct WWQOA: Sendable {
@@ -14,7 +15,6 @@ public struct WWQOA: Sendable {
     
     private let encoder: FileEncoder = .init()
     private let decoder: FileDecoder = .init()
-    private let wavEncoder = WavEncoder()
     
     public init() {}
 }
@@ -62,7 +62,7 @@ public extension WWQOA {
     func decodeFile(_ data: Data, to url: URL) throws -> WWQOA.FileDecodeInformation {
         
         let result = try decodeFile(data)
-        let wavData = try wavEncoder.makeData(samples: result.interleavedSamples, channels: result.channels, sampleRate: result.sampleRate)
+        let wavData = try WWWavWriter.makeData(samplesType: .PCM16(result.interleavedSamples), sampleRate: UInt32(result.sampleRate), channels: UInt16(result.channels))
         
         try wavData.write(to: url)
         
