@@ -22,8 +22,8 @@ let package = Package(
                 .product(name: "WWByteReader", package: "WWByteReader"),
                 .product(name: "WWWavWriter", package: "WWWavWriter"),
             ],
-            resources: [.copy("Privacy")
-        ]),
+            resources: [.copy("Privacy")]
+        ),
     ],
     swiftLanguageVersions: [
         .v5
