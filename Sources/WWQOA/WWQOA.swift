@@ -12,10 +12,10 @@ public struct WWQOA: Sendable {
     
     public static let shared: WWQOA = .init()
     
-    private let encoder: WWQOA.FileEncoder = .init()
-    private let decoder: WWQOA.FileDecoder = .init()
-    private let wavEncoder = WWQOA.WavEncoder()
-
+    private let encoder: FileEncoder = .init()
+    private let decoder: FileDecoder = .init()
+    private let wavEncoder = WavEncoder()
+    
     public init() {}
 }
 

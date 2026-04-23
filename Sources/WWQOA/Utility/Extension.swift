@@ -7,22 +7,6 @@
 
 import UIKit
 
-
-// MARK: - Int16 Clamping Helper
-
-extension Int16 {
-    
-    init(clamping value: Int32) {
-        if value > 32767 {
-            self = 32767
-        } else if value < -32768 {
-            self = -32768
-        } else {
-            self = Int16(value)
-        }
-    }
-}
-
 // MARK: - Int32
 extension Int32 {
     

@@ -14,6 +14,10 @@ final class ViewController: UIViewController {
         
         super.viewDidLoad()
 
+        
+        print(Int16.max)
+        print(Int16.min)
+
         do {
             let qoaUrl = try encoding()
             _ = try decoding(qoaUrl: qoaUrl)
