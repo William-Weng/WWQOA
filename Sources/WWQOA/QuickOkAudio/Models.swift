@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - 一般模型
 extension WWQOA {
-        
+    
     /// QOA 檔案編碼器
     struct FileEncoder {
         let frameEncoder = FrameEncoder()   // Frame編碼器
@@ -30,6 +30,9 @@ extension WWQOA {
 
     /// QOA 切片編碼器
     struct SliceEncoder {}
+    
+    /// 音訊匯入器
+    struct AudioImporter {}
     
     /// QOA Frame 編碼器的輸入參數，封裝交錯格式的 PCM 樣本、聲道配置和取樣率，用於單一 frame 編碼。自動計算每個聲道的樣本數、切片數，並提供有效性驗證。
     struct FrameInput: Equatable {

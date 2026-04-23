@@ -91,7 +91,6 @@ extension WWQOA {
 
     /// 解碼「單一個 QOA frame」時可能發生的錯誤。
     enum FrameDecodeError: Error {
-
         case insufficientData                                           // 資料不夠，無法讀取完整的 frame header 或 LMS / slice 資料。
         case invalidChannelCount                                        // header 裡的聲道數超出有效範圍（例如 0 或太大）。
         case invalidSampleRate                                          // header 裡的 sampleRate 不在有效範圍（例如 0 或超過 24 bit 限制）。
@@ -103,7 +102,6 @@ extension WWQOA {
     
     /// 解碼「整個 QOA 檔案」時可能發生的錯誤。
     enum FileDecodeError: Error {
-
         case insufficientData                                           // 檔案資料不夠，無法讀取完整的檔案 header 或至少一個 frame。
         case invalidMagic                                               // 檔案 header 的 magic 不符（例如不是 "qoaf"）。
         case noFrames                                                   // 檔案裡沒有任何有效的 frame（可能是 header 正確但內容為空）。
@@ -111,6 +109,14 @@ extension WWQOA {
         case inconsistentStaticFileSampleRate                           // 從多個 frame 解碼後，發現 sampleRate 不一致（但規格要求 static file 必須固定 sampleRate）。
         case frameDecodeFailed                                          // 某一個 frame 被 `WWQOA.FrameDecoder` 解碼失敗（例如 `FrameDecodeError`）。
         case sampleCountMismatch                                        // 解碼後累計的樣本數與 header 裡的總樣本數不一致（可能封包損壞或 streaming 標記與實際長度衝突）。
+    }
+    
+    /// 自定義音訊匯入錯誤類型
+    enum AudioImporterError: Error {
+        case unsupportedFormat                                          // 檔案格式不支援，或無法解碼為 PCM Int16
+        case failedToCreateBuffer                                       // 無法建立 AVAudioPCMBuffer (記憶體不足或格式錯誤)
+        case failedToReadPCMData                                        // 無法從 AVAudioPCMBuffer 讀取底層 PCM 樣本資料
+        case invalidFrameLength                                         // 音訊檔案長度無效 (0 或負數影格)
     }
 }
 

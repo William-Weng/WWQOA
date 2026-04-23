@@ -15,6 +15,7 @@ public struct WWQOA: Sendable {
     
     private let encoder: FileEncoder = .init()
     private let decoder: FileDecoder = .init()
+    private let audioImporter = AudioImporter()
     
     public init() {}
 }
@@ -59,7 +60,7 @@ public extension WWQOA {
     ///   - data: 輸入的 QOA 檔案資料
     ///   - url: 目標 WAV 檔案路徑
     /// - Throws: 解碼錯誤、檔案寫入錯誤、WAV header 生成錯誤等
-    func decodeFile(_ data: Data, to url: URL) throws -> WWQOA.FileDecodeInformation {
+    func decodeFile(_ data: Data, to url: URL) throws -> FileDecodeInformation {
         
         let result = try decodeFile(data)
         let wavData = try WWWavWriter.makeData(samplesType: .PCM16(result.interleavedSamples), sampleRate: UInt32(result.sampleRate), channels: UInt16(result.channels))
@@ -70,4 +71,14 @@ public extension WWQOA {
     }
 }
 
+// MARK: - 公開函式 (音訊匯入)
+public extension WWQOA {
+    
+    /// 讀取 Apple 可解碼的音訊檔案，統一轉換為 Int16 交錯式 PCM (*.mp3, *.m4a, *.aac, *.wav, *.aiff, *.caf)
+    /// - Parameter url: URL
+    /// - Returns: FileEncodeInput
+    func loadPCMInt16(from url: URL) throws -> FileEncodeInput {
+        return try audioImporter.loadPCMInt16(from: url)
+    }
+}
 

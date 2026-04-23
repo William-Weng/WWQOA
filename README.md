@@ -26,7 +26,7 @@
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/William-Weng/WWQOA", .upToNextMinor(from: "1.0.0"))
+    .package(url: "https://github.com/William-Weng/WWQOA", .upToNextMinor(from: "1.1.0"))
 ]
 ```
 
@@ -52,6 +52,7 @@ dependencies: [
 | `encodeFile(_:to:)` | 將編碼完成的QOA檔存成檔案。 |
 | `decodeFile(_:)` | 解碼完整的 QOA 檔案為 `FileDecodeResult`。 |
 | `decodeFile(_:to:)` | 解碼 QOA 檔案並直接匯出為 WAV 檔案。 |
+| `loadPCMInt16(from:)` | 讀取 Apple 可解碼的音訊檔案，統一轉換為 Int16 交錯式 PCM。 |
 
 ## 🚀 使用範例
 
@@ -79,7 +80,7 @@ private extension ViewController {
     func encoding() throws -> URL {
         
         let m4aUrl = Bundle.main.url(forResource: "do-re-mi-re-do", withExtension: "m4a")!
-        let pcmInput = try AudioImporter.loadPCMInt16(from: m4aUrl)
+        let pcmInput = try WWQOA.shared.loadPCMInt16(from: m4aUrl)
         let qoaUrl = FileManager.default.temporaryDirectory.appendingPathComponent("do-re-mi-re-do.qoa")
         let result = try WWQOA.shared.encodeFile(pcmInput, to: qoaUrl)
         

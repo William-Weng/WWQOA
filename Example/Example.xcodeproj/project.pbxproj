@@ -11,7 +11,9 @@
 		811B2C5C2F9610AB0056D3E1 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 811B2C5B2F9610AB0056D3E1 /* WWQOA */; };
 		81A843962F99AA3C00748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A843952F99AA3C00748682 /* WWQOA */; };
 		81A8439C2F99AD8F00748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A8439B2F99AD8F00748682 /* WWQOA */; };
-		81A843DB2F99C0E100748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A843DA2F99C0E100748682 /* WWQOA */; };
+		81A843DE2F99C57800748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A843DD2F99C57800748682 /* WWQOA */; };
+		81A843E12F99C8D200748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A843E02F99C8D200748682 /* WWQOA */; };
+		81A843E42F99C91600748682 /* WWQOA in Frameworks */ = {isa = PBXBuildFile; productRef = 81A843E32F99C91600748682 /* WWQOA */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,8 +46,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81A843DB2F99C0E100748682 /* WWQOA in Frameworks */,
+				81A843E12F99C8D200748682 /* WWQOA in Frameworks */,
+				81A843DE2F99C57800748682 /* WWQOA in Frameworks */,
 				81A8439C2F99AD8F00748682 /* WWQOA in Frameworks */,
+				81A843E42F99C91600748682 /* WWQOA in Frameworks */,
 				81A843962F99AA3C00748682 /* WWQOA in Frameworks */,
 				81021B6D2F98C59F00EE1C52 /* WWQOA in Frameworks */,
 				811B2C5C2F9610AB0056D3E1 /* WWQOA in Frameworks */,
@@ -95,7 +99,9 @@
 				81021B6C2F98C59F00EE1C52 /* WWQOA */,
 				81A843952F99AA3C00748682 /* WWQOA */,
 				81A8439B2F99AD8F00748682 /* WWQOA */,
-				81A843DA2F99C0E100748682 /* WWQOA */,
+				81A843DD2F99C57800748682 /* WWQOA */,
+				81A843E02F99C8D200748682 /* WWQOA */,
+				81A843E32F99C91600748682 /* WWQOA */,
 			);
 			productName = Example;
 			productReference = 817EE1FE2EB1FA050036B57C /* Example.app */;
@@ -126,7 +132,7 @@
 			mainGroup = 817EE1F52EB1FA050036B57C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				81A843D92F99C0E100748682 /* XCRemoteSwiftPackageReference "WWQOA" */,
+				81A843E22F99C91600748682 /* XCRemoteSwiftPackageReference "WWQOA" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 817EE1FF2EB1FA050036B57C /* Products */;
@@ -370,12 +376,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		81A843D92F99C0E100748682 /* XCRemoteSwiftPackageReference "WWQOA" */ = {
+		81A843E22F99C91600748682 /* XCRemoteSwiftPackageReference "WWQOA" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/William-Weng/WWQOA";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 1.0.3;
+				minimumVersion = 1.1.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -397,9 +403,17 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = WWQOA;
 		};
-		81A843DA2F99C0E100748682 /* WWQOA */ = {
+		81A843DD2F99C57800748682 /* WWQOA */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 81A843D92F99C0E100748682 /* XCRemoteSwiftPackageReference "WWQOA" */;
+			productName = WWQOA;
+		};
+		81A843E02F99C8D200748682 /* WWQOA */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = WWQOA;
+		};
+		81A843E32F99C91600748682 /* WWQOA */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 81A843E22F99C91600748682 /* XCRemoteSwiftPackageReference "WWQOA" */;
 			productName = WWQOA;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -28,7 +28,7 @@ private extension ViewController {
     func encoding() throws -> URL {
         
         let m4aUrl = Bundle.main.url(forResource: "do-re-mi-re-do", withExtension: "m4a")!
-        let pcmInput = try AudioImporter.loadPCMInt16(from: m4aUrl)
+        let pcmInput = try WWQOA.shared.loadPCMInt16(from: m4aUrl)
         let qoaUrl = FileManager.default.temporaryDirectory.appendingPathComponent("do-re-mi-re-do.qoa")
         let result = try WWQOA.shared.encodeFile(pcmInput, to: qoaUrl)
         
