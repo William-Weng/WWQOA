@@ -1,5 +1,5 @@
 {
-  "originHash" : "fd0cbc63837e757e698d96378eb472395b787695d3e66bc31ae29abccf05eb9e",
+  "originHash" : "f7161b68f0d1c15d09f7134c20529ba1a45c16aef41e28e66f9c4b35f929d3a5",
   "pins" : [
     {
       "identity" : "wwbytereader",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "649c61f39782e3e7e4fe962d2f6354dcb60c1992",
         "version" : "1.0.1"
+      }
+    },
+    {
+      "identity" : "wwqoa",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/William-Weng/WWQOA",
+      "state" : {
+        "revision" : "ecf87743d6310479e77f674a73c5ecba4375f04b",
+        "version" : "1.0.3"
       }
     },
     {
