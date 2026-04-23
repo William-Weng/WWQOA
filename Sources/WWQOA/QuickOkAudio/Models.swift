@@ -37,9 +37,9 @@ extension WWQOA {
     /// QOA Frame 編碼器的輸入參數，封裝交錯格式的 PCM 樣本、聲道配置和取樣率，用於單一 frame 編碼。自動計算每個聲道的樣本數、切片數，並提供有效性驗證。
     struct FrameInput: Equatable {
         
-        let interleavedSamples: [Int16]/// 交錯格式 PCM 樣本 `[L0,R0,L1,R1,...]`，直接來自 AVAudioPCMBuffer.floatChannelData
-        let channels: Int/// 聲道數（1 = 單聲道，2 = 立體聲，QOA 支援 1-255 聲道）
-        let sampleRate: Int/// 取樣率（Hz），QOA 固定支援 44100Hz/48000Hz，編碼時會自動驗證
+        let interleavedSamples: [Int16]     // 交錯格式 PCM 樣本 `[L0,R0,L1,R1,...]`，直接來自 AVAudioPCMBuffer.floatChannelData
+        let channels: Int                   // 聲道數（1 = 單聲道，2 = 立體聲，QOA 支援 1-255 聲道）
+        let sampleRate: Int                 // 取樣率（Hz），QOA 固定支援 44100Hz/48000Hz，編碼時會自動驗證
 
         var samplesPerChannel: Int { calculateSamplesPerChannel() }
         var slicesPerChannel: Int { calculateSlicesPerChannel () }
